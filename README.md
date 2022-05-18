@@ -1,4 +1,5 @@
 # Python / Django Live Project Details
+# Please view the link in the YTSiteWalkthrough.txt file for a tour of the site! 
 Topic: Best Cities in the U.S.
 ### Introduction
 I have completed a 2 week sprint in the Software Development Bootcamp through The Tech Academy. I was assigned to a project where I created a website with a topic of my choice to practice what I have been learning. Along the way I also was presented with some new concepts that I hadn't seen up until that point. Such as Html/JSON parsing. Overall, this proved to be a great learning experience as I was able to implement and build on what I had learned so far.

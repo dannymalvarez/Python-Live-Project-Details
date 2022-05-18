@@ -1,0 +1,26 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}Top Cities{% endblock %}
+
+{% block header %}Top Cities{% endblock %}
+
+{% block content %}
+
+<div>
+    <table>
+        <tr>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+        {% for places in topC %}
+        <tr>
+            <td><a href="{% url 'Best_Cities_details' places.id %}">{{ places.city }}</a></td>
+            <td>{{ places.state }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

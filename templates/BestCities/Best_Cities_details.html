@@ -1,0 +1,39 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}Plane Details{% endblock %}
+
+{% block header %}test{% endblock %}
+
+{% block content %}
+
+<div>
+    <div>
+        <table class="description-width">
+            <tr>
+                <th>City</th>
+                <th>State</th>
+                <th>State Cost Index</th>
+                <th>Average Cost of Living</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>{{ item.city }}</td>
+                <td>{{ item.state }}</td>
+                <td>{{ item.state_cost_index }}</td>
+                <td>{{ item.cost_of_living_average }}</td>
+                <td>{{ item.description }}</td>
+            </tr>
+        </table>
+        <div>
+            <div>
+                <button class="btn"><a href="{% url 'Best_Cities_edit' item.id %}">Edit</a></button>
+                <button class="btn"><a href="{% url 'Best_Cities_delete' item.id %}">Delete</a></button>
+                <button class="btn"><a href="{% url 'Best_Cities_topcities' %}">View Another City</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

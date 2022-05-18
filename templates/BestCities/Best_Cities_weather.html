@@ -1,0 +1,85 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}Top City Weather{% endblock %}
+
+{% block header %}Weather Search{% endblock %}
+
+{% block content %}
+
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="search"
+               class="search-field"
+               name="searchTerm"
+               placeholder="Chattanooga,tn,us"
+               required /><hr width="600" color="black">
+
+        <input type="checkbox" id="CurrentTemp" name="CurrentTemp"/>Current Temperature
+        <input type="checkbox" id="feelsTemp" name="feelsTemp"/>Feels Like
+        <input type="checkbox" id="THigh" name="THigh"/>Today's High
+        <br>
+        <input type="checkbox" id="TLow" name="TLow"/>Today's Low
+        <input type="checkbox" id="Wind" name="Wind"/>Wind Speed
+        <input type="checkbox" id="Hum" name="Hum"/>Humidity
+        <hr width="600" color="black">
+        <input class="btn" type="submit" value="Search"/>
+        <hr width="600" color="black">
+        <table border="1">
+            <tr>
+                {% if CTemp or FT or TH or TL or WindSpeed or THumid %}
+                    <h3>Weather for {{info.0}}</h3>
+                {% endif %}
+            </tr>
+            <tr>
+                {% if CTemp %}
+                    <th>Current Temperature (F)</th>
+                {% endif %}
+                {% if FT %}
+                    <th>Feels Like (F)</th>
+                {% endif %}
+                {% if TH %}
+                    <th>Today's High (F)</th>
+                {% endif %}
+                {% if TL %}
+                    <th>Today's Low (F)</th>
+                {% endif %}
+                {% if THumid %}
+                    <th>Humidity (%)</th>
+                {% endif %}
+                {% if WindSpeed %}
+                    <th>Wind Speed</th>
+                {% endif %}
+
+            </tr>
+            <tr>
+                {% if CTemp %}
+                   <td>{{info.1}}</td>
+                {% endif %}
+                {% if FT %}
+                    <td>{{info.2}}</td>
+                {% endif %}
+                {% if TH %}
+                    <td>{{info.3}}</td>
+                {% endif %}
+                {% if TL %}
+                    <td>{{info.4}}</td>
+                {% endif %}
+                {% if THumid %}
+                    <td>{{info.6}}</td>
+                {% endif %}
+                {% if WindSpeed %}
+                    <td>{{info.5}}</td>
+                {% endif %}
+            </tr>
+        </table>
+    </form>
+</div>
+<div>
+    <h4>Here you can check the weather in any city and state in the United States!</h4>
+    <p>You have some in-depth choices that you can select.</p>
+    <p>You should try all the places you have lived!</p>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Best_Cities_css.css' %}">
+
+    </head>
+    <body>
+        <div>
+            <div>
+                {% include "BestCities/Best_Cities_navbar.html" %}
+            </div>
+            <header>
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+    <div class="clear"></div>
+    <footer>
+
+        <p>Created by Daniel Alvarez &copy; 2022</p>
+        <button class="button-up" onclick="ChangeBackground()">Change Background Color</button>
+        <script>
+
+
+
+     const btn = document.querySelector('button');
+    var backgrounds = ['#D4A373','#E7C8A0','#FEFAE0','#E9EDC9','#CCD5AE'];
+    let i = 0;
+    function ChangeBackground(){
+            document.body.style.backgroundColor = backgrounds[i];
+            (i > backgrounds.length-2) ? i = 0 : i++
+    }
+
+        </script>
+    </footer>
+</html>

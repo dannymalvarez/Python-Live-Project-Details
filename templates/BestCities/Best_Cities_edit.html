@@ -1,0 +1,24 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}City Edit{% endblock %}
+
+{% block header %}Choose a city to edit.{% endblock %}
+
+{% block content %}
+
+<div>
+    <form class="form-input" name="PlacesForm" method="POST" action="{% url 'Best_Cities_edit' item.id %}">
+        <div>
+            <p>Make your edits and save them.</p>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+            <div>
+                <button type="submit" value="save">Save Changes</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

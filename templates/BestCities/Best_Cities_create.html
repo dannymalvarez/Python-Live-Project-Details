@@ -1,0 +1,27 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}Your City{% endblock %}
+
+{% block header %}How does your city compare?{% endblock %}
+
+{% block content %}
+
+    <div>
+        <p><a class="zoom" href="https://worldpopulationreview.com/state-rankings/cost-of-living-index-by-state" target="_blank">U.S. cost indexes by state.</a></p>
+        <!-- this ^ links to a site for reference for cost of living information -->
+        <p>Cost indexes are compared to 100.</p> <!-- this gives them some explanation of what the cost index is compared against -->
+        <form method="POST" action="{% url 'Best_Cities_create' %}">
+            <div class="form-input">
+                {% csrf_token %} <!-- validation token -->
+                {{ form.non_field_errors }}
+                {{ form.as_p }} <!--this renders a form with all the fields from the models as a table which -->
+            </div>
+            <div>
+                <input class="btn" type="submit" value="Submit"> <!-- submits their inputs -->
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

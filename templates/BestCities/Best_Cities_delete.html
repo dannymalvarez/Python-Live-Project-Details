@@ -1,0 +1,21 @@
+{% extends "BestCities/Best_Cities_base.html" %}
+
+{% load static %}
+
+{% block title %}City Delete{% endblock %}
+
+{% block header %}Delete{% endblock %}
+
+{% block content %}
+
+
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2>Confirm Delete</h2>
+    <p>Would you like to delete "{{ change.city }} {{ change.state }}"?</p>
+    <input type="submit" value="Delete" class="btn">
+    <a href="{% url 'Best_Cities_topcities' %}"><button class="btn" type="button">Cancel</button></a>
+</form>
+
+
+{% endblock %}

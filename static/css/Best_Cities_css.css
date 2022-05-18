@@ -1,0 +1,94 @@
+html {
+    font-family: 'Merriweather', serif;
+}
+
+header, body {
+    text-align: center;
+}
+nav {
+    color: black;
+    background-color: #D4A373;
+    text-align: left;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: #ccd5ae;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.description-width {
+    max-width: 700px;
+}
+
+.form-input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: #ccd5ae;
+    max-width: 500px;
+}
+
+.paragraph-justify {
+    text-align: justify;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn {
+    background-color: #e9edc9
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear:both;
+    height: 60px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e7c8a0;
+    color: black;
+    text-align: center;
+}
+
+
+
+.zoom {
+    transition: transform .8s;
+}
+
+.zoom:hover {
+    background-color: #deb68a;
+    transform: scale(1.5);
+}
+
+.button-up {
+    margin-bottom: 15px;
+}
